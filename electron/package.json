@@ -1,5 +1,5 @@
 {
-  "name": "clore-app",
+  "name": "Clore-Wallet",
   "version": "1.0.0",
   "description": "An Amazing Capacitor App",
   "author": {
@@ -17,7 +17,10 @@
     "electron:start-live": "node ./live-runner.js",
     "electron:start": "npm run build && electron --inspect=5858 ./",
     "electron:pack": "npm run build && electron-builder build --dir -c ./electron-builder.config.json",
-    "electron:make": "npm run build && electron-builder build -c ./electron-builder.config.json -p always"
+    "electron:make": "npm run build && electron-builder build -c ./electron-builder.config.json -p always",
+    "build:mac": "electron-packager . --overwrite --asar=true --platform=darwin --arch=x64 --icon=assets/icons/mac/icon.icns --prune=true --out=release-builds",
+    "build:windows": "electron-packager . --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/icon.ico --prune=true --out=release-builds --version-string.CompanyName=Clore --version-string.FileDescription=Clore --version-string.ProductName='Clore Wallet'",
+    "build:linux": "electron-packager . --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/1024x1024.png --prune=true --out=release-builds"
   },
   "dependencies": {
     "@capacitor-community/electron": "^5.0.0",

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">clore-app</string>
-    <string name="title_activity_main">clore-app</string>
-    <string name="package_name">com.clore.app</string>
-    <string name="custom_url_scheme">com.clore.app</string>
+    <string name="app_name">Clore Wallet</string>
+    <string name="title_activity_main">Clore Wallet</string>
+    <string name="package_name">com.example.app</string>
+    <string name="custom_url_scheme">com.example.app</string>
 </resources>

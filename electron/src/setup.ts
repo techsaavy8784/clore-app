@@ -112,16 +112,23 @@ export class ElectronCapacitorApp {
       show: false,
       x: this.mainWindowState.x,
       y: this.mainWindowState.y,
-      width: this.mainWindowState.width,
-      height: this.mainWindowState.height,
+      width: 452,
+      height: 842,
+      resizable: false,
       webPreferences: {
         nodeIntegration: true,
         contextIsolation: true,
         // Use preload to inject the electron varriant overrides for capacitor plugins.
         // preload: join(app.getAppPath(), "node_modules", "@capacitor-community", "electron", "dist", "runtime", "electron-rt.js"),
         preload: preloadPath,
+        devTools: false
       },
     });
+
+    this.MainWindow.once("ready-to-show", () => {
+      this.MainWindow.removeMenu();
+    })
+
     this.mainWindowState.manage(this.MainWindow);
 
     if (this.CapacitorFileConfig.backgroundColor) {
